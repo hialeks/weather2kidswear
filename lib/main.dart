@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'screens/home_screen.dart';
+import 'screens/settings_screen.dart';
+import 'services/weather_service.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const WeatherWearApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class WeatherWearApp extends StatelessWidget {
+  const WeatherWearApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+    return ChangeNotifierProvider(
+      create: (_) => WeatherService(),
+      child: MaterialApp(
+        title: 'Weather2Kidswear',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
+        home: const HomeScreen(),
+        routes: {
+          '/settings': (context) => const SettingsScreen(),
+        },
       ),
     );
   }
