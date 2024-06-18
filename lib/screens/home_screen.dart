@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: weatherService.currentWeather == null
               ? const CircularProgressIndicator()
               : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const SizedBox(height: 20),
                     Text(
@@ -62,12 +62,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: const TextStyle(fontSize: 24),
                     ),
                     const SizedBox(height: 50),
-                    Text(textAlign: ,
-                      DressSuggestions.getSuggestions(
-                        weatherService.currentWeather!,
-                        true,
+                    Container(
+                      color: const Color.fromARGB(95, 53, 169, 136),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          DressSuggestions.getSuggestions(
+                            weatherService.currentWeather!,
+                            true,
+                          ),
+                          style: const TextStyle(fontSize: 18),
+                        ),
                       ),
-                      style: const TextStyle(fontSize: 18),
                     ),
                   ],
                 ),
