@@ -33,14 +33,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: const Text('Einstellungen'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             SwitchListTile(
-              title: const Text('For boys'),
+              title: const Text('Für Jungen'),
               value: isBoy,
               onChanged: (value) {
                 setState(() {
@@ -50,7 +50,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               },
             ),
             SwitchListTile(
-              title: const Text('For girls'),
+              title: const Text('Für Mädchen'),
               value: !isBoy,
               onChanged: (value) {
                 setState(() {

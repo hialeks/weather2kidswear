@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -41,31 +43,35 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Center(
-        child: weatherService.currentWeather == null
-            ? const CircularProgressIndicator()
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Temperature: ${weatherService.currentWeather!.temperature}°C',
-                    style: const TextStyle(fontSize: 24),
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    'Humidity: ${weatherService.currentWeather!.humidity}%',
-                    style: const TextStyle(fontSize: 24),
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    DressSuggestions.getSuggestions(
-                      weatherService.currentWeather!,
-                      true, // Assume it's for boys for now, we can add user preference later
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Center(
+          child: weatherService.currentWeather == null
+              ? const CircularProgressIndicator()
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 20),
+                    Text(
+                      'Temperatur: ${weatherService.currentWeather!.temperature}°C',
+                      style: const TextStyle(fontSize: 24),
                     ),
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
+                    const SizedBox(height: 20),
+                    Text(
+                      'Luftfeuchtigkeit: ${weatherService.currentWeather!.humidity}%',
+                      style: const TextStyle(fontSize: 24),
+                    ),
+                    const SizedBox(height: 50),
+                    Text(textAlign: ,
+                      DressSuggestions.getSuggestions(
+                        weatherService.currentWeather!,
+                        true,
+                      ),
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _fetchWeatherData,

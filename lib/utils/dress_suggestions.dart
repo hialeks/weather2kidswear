@@ -2,7 +2,7 @@ import '../models/weather.dart';
 
 class DressSuggestions {
   static String getSuggestions(Weather weather, bool isBoy) {
-    String suggestions = "Heute solltest du tragen: \n";
+    String suggestions = "Heute solltest du tragen: \n\n";
 
     if (weather.temperature < 10) {
       suggestions += "Warme Jacke, ";
