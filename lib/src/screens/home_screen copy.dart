@@ -60,7 +60,7 @@ class HomeScreenState extends State<HomeScreen> {
                   Container(
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(17, 193, 120, 75),
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(11),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(23.0),
@@ -76,32 +76,28 @@ class HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(fontSize: 24),
                     ),
                   const SizedBox(height: 20),
-                  if (weatherService.currentWeather != null)
-                    Text(
-                      'Temperatur: ${weatherService.currentWeather!.temperature}°C',
-                      style: const TextStyle(fontSize: 24),
-                    ),
+                  Text(
+                    'Temperatur: ${weatherService.currentWeather!.temperature}°C',
+                    style: const TextStyle(fontSize: 24),
+                  ),
                   const SizedBox(height: 20),
-                  if (weatherService.currentWeather != null)
-                    Text(
-                      'Luftfeuchtigkeit: ${weatherService.currentWeather!.humidity}%',
-                      style: const TextStyle(fontSize: 24),
-                    ),
+                  Text(
+                    'Luftfeuchtigkeit: ${weatherService.currentWeather!.humidity}%',
+                    style: const TextStyle(fontSize: 24),
+                  ),
                   const SizedBox(height: 45),
                   Container(
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(64, 75, 193, 160),
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(11),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: const EdgeInsets.all(23.0),
                       child: Text(
-                        weatherService.currentWeather != null
-                            ? DressSuggestions.getSuggestions(
-                                weatherService.currentWeather!,
-                                true,
-                              )
-                            : '',
+                        DressSuggestions.getSuggestions(
+                          weatherService.currentWeather!,
+                          true,
+                        ),
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),

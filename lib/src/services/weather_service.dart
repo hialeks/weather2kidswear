@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
+import 'package:weather2kidswear/src/services/location_permission_manager.dart';
 
 import '../models/weather.dart';
 
@@ -14,6 +15,8 @@ class WeatherService extends ChangeNotifier {
   final String _apiKey =
       'bff12edb41924fcbbea009f9d0d3244d'; // Въведете вашия OpenCage API ключ тук
   var logger = Logger();
+  final LocationPermissionManager _permissionManager =
+      LocationPermissionManager();
 
   Future<void> fetchWeather(double latitude, double longitude) async {
     final url =
@@ -33,27 +36,9 @@ class WeatherService extends ChangeNotifier {
   }
 
   Future<void> getCurrentLocationAndFetchWeather() async {
-    bool serviceEnabled;
-    LocationPermission permission;
-
-    // Проверка дали услугата за местоположение е активирана
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      logger.w('Location services are disabled.');
-      return;
-    }
-
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.denied) {
-        logger.w('Location permissions are denied.');
-        return;
-      }
-    }
-
-    if (permission == LocationPermission.deniedForever) {
-      logger.w('Location permissions are permanently denied.');
+    bool hasPermission = await _permissionManager.requestPermission();
+    if (!hasPermission) {
+      logger.w("Permission not granted");
       return;
     }
 
@@ -70,6 +55,8 @@ class WeatherService extends ChangeNotifier {
         } else {
           logger.w("Latitude or Longitude is null.");
         }
+      } else {
+        logger.w("Current position is null.");
       }
     } catch (e) {
       logger.e("Error getting location: $e");
