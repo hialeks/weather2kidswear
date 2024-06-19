@@ -4,8 +4,8 @@ import 'package:weather2kidswear/src/screens/home_screen.dart';
 import 'package:weather2kidswear/src/screens/settings_screen.dart';
 import 'package:weather2kidswear/src/services/weather_service.dart';
 
-class WeatherWearApp extends StatelessWidget {
-  const WeatherWearApp({super.key});
+class W2K extends StatelessWidget {
+  const W2K({super.key});
 
   @override
   Widget build(BuildContext context) {
