@@ -57,19 +57,20 @@ class HomeScreenState extends State<HomeScreen> {
                 children: [
                   if (weatherService.currentLocation != null)
                     const SizedBox(height: 45),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(17, 193, 120, 75),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(23.0),
-                      child: Text(
-                        'Ort: ${weatherService.currentLocation!}',
-                        style: const TextStyle(fontSize: 24),
+                  if (weatherService.currentLocation != null)
+                    Container(
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(17, 193, 120, 75),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(23.0),
+                        child: Text(
+                          'Ort: ${weatherService.currentLocation}',
+                          style: const TextStyle(fontSize: 24),
+                        ),
                       ),
                     ),
-                  ),
                   if (weatherService.currentLocation == null)
                     const Text(
                       'Lade Ort...',
@@ -88,24 +89,23 @@ class HomeScreenState extends State<HomeScreen> {
                       style: const TextStyle(fontSize: 24),
                     ),
                   const SizedBox(height: 45),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(64, 75, 193, 160),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Text(
-                        weatherService.currentWeather != null
-                            ? DressSuggestions.getSuggestions(
-                                weatherService.currentWeather!,
-                                true,
-                              )
-                            : '',
-                        style: const TextStyle(fontSize: 18),
+                  if (weatherService.currentWeather != null)
+                    Container(
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(64, 75, 193, 160),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          DressSuggestions.getSuggestions(
+                            weatherService.currentWeather!,
+                            true,
+                          ),
+                          style: const TextStyle(fontSize: 18),
+                        ),
                       ),
                     ),
-                  ),
                 ],
               ),
       ),

@@ -8,7 +8,7 @@
   
 | <img  src="assets/images/geolocate.png"  alt="Geolocation"  height="320"> | <img  src="assets/images/home.png"  alt="Home Screen"  height="320"> |
 |--|--|
-|  |  |
+| <img  src="assets/images/iphone.png"  alt="iPhone"  height="300"> | <img  src="assets/images/settings.png"  alt="Settings Screen"  height="300"> |
 
 ## Von pub.dev verwendete Pakete
 
