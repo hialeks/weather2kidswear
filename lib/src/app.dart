@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:weather2kidswear/screens/home_screen.dart';
-import 'package:weather2kidswear/screens/settings_screen.dart';
-import 'package:weather2kidswear/services/weather_service.dart';
+import 'package:weather2kidswear/src/screens/home_screen.dart';
+import 'package:weather2kidswear/src/screens/settings_screen.dart';
+import 'package:weather2kidswear/src/services/weather_service.dart';
 
 class WeatherWearApp extends StatelessWidget {
   const WeatherWearApp({super.key});
@@ -14,7 +14,7 @@ class WeatherWearApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Weather2Kidswear',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.red,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: const HomeScreen(),
