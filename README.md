@@ -1,7 +1,5 @@
 
 # W2K App
-#
-# weather2kidswear
 
 ### Beschreibung der App "Weather to Kidswear" - W2K App
 
