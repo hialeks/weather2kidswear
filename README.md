@@ -2,4 +2,4 @@
 
 # weather2kidswear
 
-<img  src="assets/images/Geolocation.png"  alt="Geolocation"  height="300">       <img  src="assets/images/Home.png"  alt="Home Screen"  height="300"> 
+<img  src="assets/images/geolocation.png"  alt="Geolocation"  height="350">       <img  src="assets/images/home.png"  alt="Home Screen"  height="350"> 
