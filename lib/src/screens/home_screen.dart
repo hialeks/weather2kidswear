@@ -90,19 +90,22 @@ class HomeScreenState extends State<HomeScreen> {
                     ),
                   const SizedBox(height: 45),
                   if (weatherService.currentWeather != null)
-                    Container(
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(64, 75, 193, 160),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Text(
-                          DressSuggestions.getSuggestions(
-                            weatherService.currentWeather!,
-                            true,
+                    Padding(
+                      padding: const EdgeInsets.all(23.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(64, 75, 193, 160),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Text(
+                            DressSuggestions.getSuggestions(
+                              weatherService.currentWeather!,
+                              true,
+                            ),
+                            style: const TextStyle(fontSize: 18),
                           ),
-                          style: const TextStyle(fontSize: 18),
                         ),
                       ),
                     ),

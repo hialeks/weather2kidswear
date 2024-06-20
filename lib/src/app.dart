@@ -12,6 +12,7 @@ class W2K extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => WeatherService(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Weather2Kidswear',
         theme: ThemeData(
           primarySwatch: Colors.red,
