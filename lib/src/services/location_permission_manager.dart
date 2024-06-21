@@ -8,7 +8,6 @@ class LocationPermissionManager {
     bool serviceEnabled;
     LocationPermission permission;
 
-    // Проверка дали услугата за местоположение е активирана
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
       logger.w('Location services are disabled.');

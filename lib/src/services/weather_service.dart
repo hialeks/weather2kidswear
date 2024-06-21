@@ -13,7 +13,7 @@ class WeatherService extends ChangeNotifier {
   Position? currentPosition;
   String? currentLocation;
   final String _apiKey =
-      'bff12edb41924fcbbea009f9d0d3244d'; // Въведете вашия OpenCage API ключ тук
+      'bff12edb41924fcbbea009f9d0d3244d'; 
   var logger = Logger();
   final LocationPermissionManager _permissionManager =
       LocationPermissionManager();

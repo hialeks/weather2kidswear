@@ -88,7 +88,7 @@ class HomeScreenState extends State<HomeScreen> {
                       'Luftfeuchtigkeit: ${weatherService.currentWeather!.humidity}%',
                       style: const TextStyle(fontSize: 24),
                     ),
-                  const SizedBox(height: 45),
+                  const SizedBox(height: 22),
                   if (weatherService.currentWeather != null)
                     Padding(
                       padding: const EdgeInsets.all(23.0),
